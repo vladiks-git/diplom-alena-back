@@ -1,9 +1,9 @@
-import { UserModel } from '../db/user.js';
 import { Roles } from '../consts/common.js';
 import { IResponsible } from '../types/user.js';
+import { UserModel } from '../db/models.js';
 
 const getAllUsers = async () => {
-  return UserModel.findAll();
+  return await UserModel.findAll();
 };
 
 const createAdmin = async () => {
@@ -22,11 +22,27 @@ const createAdmin = async () => {
   }
 };
 
+const createStudent = async () => {
+  try {
+    const createdUser = await UserModel.create({
+      login: 'test',
+      password: 'test',
+      role: Roles.student,
+      phone: '',
+      birthday: '',
+      email: '',
+      fio: '',
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 const findByLogin = async (login: string) => {
   return await UserModel.findOne({ where: { login: login } });
 };
 
-const createResponsible = async (entity: IResponsible) => {
+const createUser = async (entity: IResponsible) => {
   return await UserModel.create({
     ...entity,
   });
@@ -36,5 +52,6 @@ export const UserService = {
   getAllUsers,
   createAdmin,
   findByLogin,
-  createResponsible,
+  createUser,
+  createStudent,
 };

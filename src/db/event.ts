@@ -1,44 +1,40 @@
 // import { sequelize } from './dbConnect.js';
+// import { IEventModel } from '../types/event.js';
 // import { DataTypes } from 'sequelize';
-// import { IResponsibleModel, IStudentModel, IUserModel } from '../types/user.js';
-// import EventModel from './event.js';
+// import UserModel from './user.js';
 //
-// const UserModel = sequelize.define<
-//   IUserModel | IResponsibleModel | IStudentModel
-// >('user', {
+// const EventModel = sequelize.define<IEventModel>('event', {
 //   id: {
 //     type: DataTypes.INTEGER,
 //     autoIncrement: true,
 //     primaryKey: true,
 //   },
-//   login: {
+//   type: {
 //     type: DataTypes.STRING,
 //     allowNull: false,
 //   },
-//   password: {
+//   name: {
 //     type: DataTypes.STRING,
 //     allowNull: false,
 //   },
-//   role: {
+//   status: {
 //     type: DataTypes.STRING,
 //     allowNull: false,
 //   },
-//   fio: {
+//   date: {
 //     type: DataTypes.STRING,
+//     allowNull: false,
 //   },
-//   birthday: {
+//   result: {
 //     type: DataTypes.STRING,
+//     allowNull: false,
 //   },
-//   phone: {
+//   award: {
 //     type: DataTypes.STRING,
-//   },
-//   email: {
-//     type: DataTypes.STRING,
+//     allowNull: false,
 //   },
 // });
 //
-// UserModel.hasMany(EventModel, {
-//   foreignKey: 'id',
-// });
+// EventModel.belongsTo(UserModel);
 //
-// export default UserModel;
+// export default EventModel;

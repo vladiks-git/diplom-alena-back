@@ -37,7 +37,7 @@ export const EventModel = sequelize.define<IEventModel>('event', {
     type: DataTypes.BOOLEAN,
     allowNull: false,
   },
-  potins: {
+  points: {
     type: DataTypes.INTEGER,
     allowNull: false,
   },

@@ -81,6 +81,15 @@ export const UserModel = sequelize.define<
   course: {
     type: DataTypes.STRING,
   },
+  faculty: {
+    type: DataTypes.STRING,
+  },
+  group: {
+    type: DataTypes.STRING,
+  },
+  eventType: {
+    type: DataTypes.STRING,
+  },
 });
 
 EventModel.belongsTo(UserModel);

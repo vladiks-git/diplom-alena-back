@@ -12,10 +12,10 @@ const createAdmin = async () => {
       login: 'admin',
       password: 'admin',
       role: Roles.admin,
-      phone: '',
+      phone: '999999999',
       birthday: '',
-      email: '',
-      fio: '',
+      email: 'admin@mail.ru',
+      fio: 'admin',
     });
   } catch (e) {
     console.log(e);
@@ -25,14 +25,18 @@ const createAdmin = async () => {
 const createStudent = async () => {
   try {
     const createdUser = await UserModel.create({
-      login: 'test',
-      password: 'test',
+      login: 'student',
+      password: 'student',
       role: Roles.student,
-      phone: '',
+      phone: 'student',
       birthday: '',
-      email: '',
+      email: 'student@mail.ru',
       fio: '',
       course: '1',
+      faculty: 'facultet',
+      department: 'departament',
+      direction: 'direction',
+      group: '1',
     });
   } catch (e) {
     console.log(e);
@@ -48,7 +52,7 @@ const createResponsible = async () => {
       phone: '',
       birthday: '',
       email: '',
-      fio: '',
+      fio: 'test1',
     });
   } catch (e) {
     console.log(e);

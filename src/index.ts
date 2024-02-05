@@ -22,8 +22,8 @@ app.use(responsibleRouter);
 // DataBase
 connectDataBase();
 (async () => {
-  // await sequelize.sync({ force: true });
-  await sequelize.sync();
+  await sequelize.sync({ force: true });
+  // await sequelize.sync();
   await UserService.createAdmin();
   await UserService.createStudent();
   await UserService.createResponsible();

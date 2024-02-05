@@ -1,9 +1,6 @@
 import { Router, Request } from 'express';
 import { IEvent } from '../types/event.js';
-import {
-  getApprovedEvents,
-  StudentService,
-} from '../service/studentService.js';
+import { StudentService } from '../service/studentService.js';
 
 export const studentRoute = Router();
 
@@ -26,7 +23,7 @@ studentRoute.get(
     const studentId = req.query.id;
     try {
       if (studentId && typeof Number(studentId) === 'number') {
-        const events = await getApprovedEvents(+studentId);
+        const events = await StudentService.getEvents(+studentId);
         res.status(200).send(JSON.stringify(events));
       }
     } catch (e) {

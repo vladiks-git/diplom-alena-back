@@ -32,6 +32,7 @@ export interface IStudent extends IUser {
   faculty?: string;
   direction?: string;
   department?: string;
+  course?: string;
 }
 
 export interface IStudentModel

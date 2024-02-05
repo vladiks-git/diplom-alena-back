@@ -5,6 +5,7 @@ import { connectDataBase, sequelize } from './db/dbConnect.js';
 import { authRouter } from './routes/auth.js';
 import { UserService } from './service/userService.js';
 import { studentRoute } from './routes/student.js';
+import { responsibleRouter } from './routes/responsible.js';
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(authRouter);
 app.use(adminRouter);
 app.use(studentRoute);
+app.use(responsibleRouter);
 
 // DataBase
 connectDataBase();
@@ -24,6 +26,7 @@ connectDataBase();
   await sequelize.sync();
   await UserService.createAdmin();
   await UserService.createStudent();
+  await UserService.createResponsible();
   app.listen(6000);
   console.log('App listen on port - 6000');
 })();

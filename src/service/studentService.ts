@@ -11,16 +11,15 @@ export const createEvent = async (entity: IEvent) => {
   });
 };
 
-export const getApprovedEvents = async (studentId: number) => {
-  return EventModel.findAll({
+export const getEvents = async (studentId: number) => {
+  return await EventModel.findAll({
     where: {
       userId: studentId,
-      isApprove: false,
     },
   });
 };
 
 export const StudentService = {
   createEvent,
-  getApprovedEvents,
+  getEvents,
 };

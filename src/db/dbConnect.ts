@@ -1,9 +1,11 @@
 import { Sequelize } from 'sequelize';
 
+// Конфиг базы данных
 export const sequelize = new Sequelize('alena', 'postgres', 'admin', {
   dialect: 'postgres',
 });
 
+// Подключения к базе данных
 export const connectDataBase = async () => {
   try {
     await sequelize.authenticate();

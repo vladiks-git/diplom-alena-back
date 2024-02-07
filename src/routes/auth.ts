@@ -3,9 +3,9 @@ import { UserService } from '../service/userService.js';
 
 export const authRouter = Router();
 
+// Контроллер авторизации
 authRouter.post('/api/auth', async (req, res) => {
   const body = req.body;
-  console.log('efwef');
   try {
     const currentUser = await UserService.findByLogin(body.login);
     if (currentUser === null) {

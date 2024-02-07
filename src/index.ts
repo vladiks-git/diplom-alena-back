@@ -7,13 +7,13 @@ import { UserService } from './service/userService.js';
 import { studentRoute } from './routes/student.js';
 import { responsibleRouter } from './routes/responsible.js';
 
+// Инициализация приложения
 const app = express();
 
 app.use(bodyParser());
 app.use(express.json());
 
-// routes
-// app.use(userRouter);
+// Роуты
 app.use(authRouter);
 app.use(adminRouter);
 app.use(studentRoute);

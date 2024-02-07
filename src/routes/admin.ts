@@ -4,6 +4,7 @@ import { UserService } from '../service/userService.js';
 
 export const adminRouter = Router();
 
+// Контроллер получения пользователей админом
 adminRouter.get('/api', async (req, res) => {
   try {
     const allUsers = (await UserService.getAllUsers()) || [];
@@ -14,6 +15,7 @@ adminRouter.get('/api', async (req, res) => {
   }
 });
 
+// Контроллер создания пользователей админом
 adminRouter.post(
   '/api/create',
   async (req: Request<any, any, IResponsible>, res) => {

@@ -1,5 +1,6 @@
 import { EventModel } from '../db/models.js';
 
+// Работы с БД. Подтверждения заявки
 export const approveEvent = async (eventId: number) => {
   const currentEvent = await EventModel.findOne({
     where: {
@@ -14,6 +15,7 @@ export const approveEvent = async (eventId: number) => {
   }
 };
 
+// Работы с БД. Получения заявок
 export const getNotApprovedEvents = async () => {
   return await EventModel.findAll({
     where: {

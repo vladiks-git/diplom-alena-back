@@ -3,6 +3,7 @@ import { IEventModel } from '../types/event.js';
 import { DataTypes } from 'sequelize';
 import { IResponsibleModel, IStudentModel, IUserModel } from '../types/user.js';
 
+// Модель мероприятия
 export const EventModel = sequelize.define<IEventModel>('event', {
   id: {
     type: DataTypes.INTEGER,
@@ -46,6 +47,7 @@ export const EventModel = sequelize.define<IEventModel>('event', {
   },
 });
 
+// Модель пользователя
 export const UserModel = sequelize.define<
   IUserModel | IResponsibleModel | IStudentModel
 >('user', {

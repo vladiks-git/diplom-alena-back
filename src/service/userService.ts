@@ -2,6 +2,7 @@ import { Roles } from '../consts/common.js';
 import { IResponsible, IStudent } from '../types/user.js';
 import { UserModel } from '../db/models.js';
 
+// Работы с БД. Получение всех пользователей
 const getAllUsers = async () => {
   return await UserModel.findAll();
 };
@@ -59,16 +60,19 @@ const createResponsible = async () => {
   }
 };
 
+// Работы с БД. Получения по логину
 const findByLogin = async (login: string) => {
   return await UserModel.findOne({ where: { login: login } });
 };
 
+// Работы с БД. Создание пользователя
 const createUser = async (entity: IResponsible | IStudent) => {
   return await UserModel.create({
     ...entity,
   });
 };
 
+// Работы с БД. Получения по ид
 const findById = async (userId: number) => {
   return await UserModel.findOne({
     where: {

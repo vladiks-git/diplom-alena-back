@@ -4,6 +4,7 @@ import { UserService } from '../service/userService.js';
 
 export const responsibleRouter = Router();
 
+// Контроллер подтверждения заявок ответственным
 responsibleRouter.post(
   '/api/responsible/approve',
   async (req: Request<any, any, { eventId: number }>, res) => {
@@ -19,6 +20,7 @@ responsibleRouter.post(
   }
 );
 
+// Контроллер получения заявок ответственным
 responsibleRouter.get('/api/responsible', async (req, res) => {
   try {
     const events = await ResponsibleService.getNotApprovedEvents();

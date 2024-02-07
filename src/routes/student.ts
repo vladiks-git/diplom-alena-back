@@ -4,6 +4,7 @@ import { StudentService } from '../service/studentService.js';
 
 export const studentRoute = Router();
 
+// Контроллер создания заявок студентом
 studentRoute.post(
   '/api/student/create',
   async (req: Request<any, any, IEvent>, res) => {
@@ -17,6 +18,7 @@ studentRoute.post(
   }
 );
 
+// Контроллер получения заявок студентом
 studentRoute.get(
   '/api/student/events',
   async (req: Request<{ id: string }>, res) => {

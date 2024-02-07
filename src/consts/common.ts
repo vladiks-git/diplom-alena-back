@@ -4,7 +4,6 @@ export enum Roles {
   responsible = 'responsible',
 }
 
-// TODO я хотел добавить мапинг для сохранения поинтов в бд
 export const PointsMap: Record<string, { [key: string]: number }> = {
   Вузовский: {
     Участие: 3,
